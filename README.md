@@ -1,23 +1,20 @@
-npm i ; tsc ; node .\build\index.js    - to run the project locally
+npm i ; npm run build ; node .\build\index.js    - to run the project locally
 
-Teacher account  -  
-    username- sanketTeacher@gmail.com
-    password- anything
+Admin account:
+mailId: admin@newtonmovies.com
+password: 88888888
 
-Other account will be created as student account
+Other accounts will be created as user account
 
-API documentation  ->>> All apis are inside -----Toodle_test.postman_collection.json-------- (postman collection export file)
-SQL files to       ->>> All queries for table creation are inside -----toodle-backend.sql------
-ER-Diagram         ->>> ER-Diagram.jpeg
-Hosted URL         ->>> https://toodle-backend.onrender.com
+API documentation  ->>> All apis are inside -----Newton.postman_collection.json-------- (postman collection export file)
+SQL files to       ->>> All queries for table creation, default insertion,functions,procedures are inside -----newton-backend.sql------
+ER-Diagram         ->>> ER Diagram.jpg
+Hosted URL         ->>> http://localhost:3000
 
 ---------------------Database info --------------------------------------- (for login and check existing data)
-Server: sql6.freemysqlhosting.net
-Name: sql6590623
-Username: sql6590623
-Password: g3BtLDEKrA
-Port number: 3306
-
-phpMyAdmin
-phpMyAdmin is now available to administer your database. phpMyAdmin will allow you to create, edit and remove tables and to back up and import your data. Follow this link http://www.phpmyadmin.co and use the database details above to get started with your new database.
+MYSQL_HOST=localhost
+MYSQL_USER=postgres
+MYSQL_PASSWORD=admin
+MYSQL_DATABASE=movie
+MYSQL_PORT=5432
 

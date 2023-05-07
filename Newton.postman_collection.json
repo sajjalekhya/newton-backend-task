@@ -1,0 +1,678 @@
+{
+	"info": {
+		"_postman_id": "2ed9711a-f505-4583-b369-04016d33ec51",
+		"name": "Newton",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20991913"
+	},
+	"item": [
+		{
+			"name": "New movie -access denied",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userName",
+						"value": "admin@mcrb.com",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "12345678",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "null",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "userId",
+						"value": "189",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"12345678\",\r\n    \"mailId\": \"nikhil1@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/logIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"logIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userName",
+						"value": "admin@mcrb.com",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "12345678",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "null",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "userId",
+						"value": "189",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"Nikhil\",\r\n    \"password\": \"12345678\",\r\n    \"mailId\": \"nikhil@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWRtaW4iLCJjcmVhdGlvbl9kYXRlIjoiMjAyMy0wNS0wNlQxODozMDowMC4wMDBaIiwibWFpbF9pZCI6ImFkbWluQG5ld3Rvbm1vdmllcy5jb20iLCJwYXNzd29yZCI6Ijg4ODg4ODg4Iiwicm9sZV9pZCI6MSwidXNlcl9pZCI6MSwiaWF0IjoxNjgzNDczMzQyLCJleHAiOjE3MTUwMzA5NDJ9.o3nu93oOVddYBCm2Jl9t7kh3fag-gD7SJkZCscekMPs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movieName\": \"Titanic 2\",\r\n    \"showTimings\": [\"10:00\",\"14:00\",\"19:00\",\"23:00\"],\r\n    \"fromDate\": \"2023-05-07\",\r\n    \"toDate\": \"2023-12-07\",\r\n    \"ticketPrice\": \"250\",\r\n    \"maxSeats\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies/new-movie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies",
+						"new-movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"12345678\",\r\n    \"mailId\": \"nikhil@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/logIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"logIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movies list based on date",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmlraGlsIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjMtMDUtMDZUMTg6MzA6MDAuMDAwWiIsIm1haWxfaWQiOiJuaWtoaWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInJvbGVfaWQiOjIsInVzZXJfaWQiOjIsImlhdCI6MTY4MzQ3MzE0MywiZXhwIjoxNzE1MDMwNzQzfQ.JxtnMrBE_2S6ocypmpPpMh_rnnU5koGc9lTJwqxdLrQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies/list?date=2023-05-08",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies",
+						"list"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2023-05-08"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shows list based on movieId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmlraGlsIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjMtMDUtMDZUMTg6MzA6MDAuMDAwWiIsIm1haWxfaWQiOiJuaWtoaWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInJvbGVfaWQiOjIsInVzZXJfaWQiOjIsImlhdCI6MTY4MzQ3MzE0MywiZXhwIjoxNzE1MDMwNzQzfQ.JxtnMrBE_2S6ocypmpPpMh_rnnU5koGc9lTJwqxdLrQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies/shows-list/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies",
+						"shows-list",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Available seats for selected show based on date",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmlraGlsIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjMtMDUtMDZUMTg6MzA6MDAuMDAwWiIsIm1haWxfaWQiOiJuaWtoaWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInJvbGVfaWQiOjIsInVzZXJfaWQiOjIsImlhdCI6MTY4MzQ3MzE0MywiZXhwIjoxNzE1MDMwNzQzfQ.JxtnMrBE_2S6ocypmpPpMh_rnnU5koGc9lTJwqxdLrQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies/seats/2?date ='2023-05-08'",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies",
+						"seats",
+						"2"
+					],
+					"query": [
+						{
+							"key": "date ",
+							"value": "'2023-05-08'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bookings list of logged in user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmlraGlsIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjMtMDUtMDZUMTg6MzA6MDAuMDAwWiIsIm1haWxfaWQiOiJuaWtoaWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInJvbGVfaWQiOjIsInVzZXJfaWQiOjIsImlhdCI6MTY4MzQ3MzE0MywiZXhwIjoxNzE1MDMwNzQzfQ.JxtnMrBE_2S6ocypmpPpMh_rnnU5koGc9lTJwqxdLrQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/bookings/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookings",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tickets booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmlraGlsIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjMtMDUtMDZUMTg6MzA6MDAuMDAwWiIsIm1haWxfaWQiOiJuaWtoaWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInJvbGVfaWQiOjIsInVzZXJfaWQiOjIsImlhdCI6MTY4MzQ3MzE0MywiZXhwIjoxNzE1MDMwNzQzfQ.JxtnMrBE_2S6ocypmpPpMh_rnnU5koGc9lTJwqxdLrQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movieId\": \"1\",\r\n    \"showId\": 2,\r\n    \"selectedSeats\": [1,2,10],\r\n    \"showDate\": \"2023-08-05\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/bookings/new-booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookings",
+						"new-booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Max seats validation while ticket booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmlraGlsIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjMtMDUtMDZUMTg6MzA6MDAuMDAwWiIsIm1haWxfaWQiOiJuaWtoaWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInJvbGVfaWQiOjIsInVzZXJfaWQiOjIsImlhdCI6MTY4MzQ3MzE0MywiZXhwIjoxNzE1MDMwNzQzfQ.JxtnMrBE_2S6ocypmpPpMh_rnnU5koGc9lTJwqxdLrQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movieId\": \"1\",\r\n    \"showId\": 2,\r\n    \"selectedSeats\": [4,5,6,7,8,9,10],\r\n    \"showDate\": \"2023-08-05\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/bookings/new-booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookings",
+						"new-booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel booking",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "userId",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmlraGlsIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjMtMDUtMDZUMTg6MzA6MDAuMDAwWiIsIm1haWxfaWQiOiJuaWtoaWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInJvbGVfaWQiOjIsInVzZXJfaWQiOjIsImlhdCI6MTY4MzQ3MzE0MywiZXhwIjoxNzE1MDMwNzQzfQ.JxtnMrBE_2S6ocypmpPpMh_rnnU5koGc9lTJwqxdLrQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/bookings/cancel-booking/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookings",
+						"cancel-booking",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding additional seats to the booking by id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmlraGlsIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjMtMDUtMDZUMTg6MzA6MDAuMDAwWiIsIm1haWxfaWQiOiJuaWtoaWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInJvbGVfaWQiOjIsInVzZXJfaWQiOjIsImlhdCI6MTY4MzQ3MzE0MywiZXhwIjoxNzE1MDMwNzQzfQ.JxtnMrBE_2S6ocypmpPpMh_rnnU5koGc9lTJwqxdLrQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"selectedSeats\": [19,20]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/bookings/update-booking/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookings",
+						"update-booking",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Visitors analytics data based on movie id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmlraGlsIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjMtMDUtMDZUMTg6MzA6MDAuMDAwWiIsIm1haWxfaWQiOiJuaWtoaWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInJvbGVfaWQiOjIsInVzZXJfaWQiOjIsImlhdCI6MTY4MzQ3MzE0MywiZXhwIjoxNzE1MDMwNzQzfQ.JxtnMrBE_2S6ocypmpPpMh_rnnU5koGc9lTJwqxdLrQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/analytics/visited/3?fromDate=2023-05-08&toDate=2025-05-08",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"analytics",
+						"visited",
+						"3"
+					],
+					"query": [
+						{
+							"key": "fromDate",
+							"value": "2023-05-08"
+						},
+						{
+							"key": "toDate",
+							"value": "2025-05-08"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profits analytics data based on movie id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmlraGlsIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjMtMDUtMDZUMTg6MzA6MDAuMDAwWiIsIm1haWxfaWQiOiJuaWtoaWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInJvbGVfaWQiOjIsInVzZXJfaWQiOjIsImlhdCI6MTY4MzQ3MzE0MywiZXhwIjoxNzE1MDMwNzQzfQ.JxtnMrBE_2S6ocypmpPpMh_rnnU5koGc9lTJwqxdLrQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/analytics/profits/3?fromDate=2023-05-08&toDate=2025-05-08",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"analytics",
+						"profits",
+						"3"
+					],
+					"query": [
+						{
+							"key": "fromDate",
+							"value": "2023-05-08"
+						},
+						{
+							"key": "toDate",
+							"value": "2025-05-08"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movies list for deletion",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmlraGlsIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjMtMDUtMDZUMTg6MzA6MDAuMDAwWiIsIm1haWxfaWQiOiJuaWtoaWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInJvbGVfaWQiOjIsInVzZXJfaWQiOjIsImlhdCI6MTY4MzQ3MzE0MywiZXhwIjoxNzE1MDMwNzQzfQ.JxtnMrBE_2S6ocypmpPpMh_rnnU5koGc9lTJwqxdLrQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/movies/list-for-deletion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies",
+						"list-for-deletion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid token (authorization)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmlraGlsIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjMtMDUtMDZUMTg6MzA6MDAuMDAwWiIsIm1haWxfaWQiOiJuaWtoaWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInJvbGVfaWQiOjIsInVzZXJfaWQiOjIsImlhdCI6MTY4MzQ3MzE0MywiZXhwIjoxNzE1MDMwNzQzfQ.JxtnMrBE_2S6ocypmpPpMh_rnnU5koGc9lTJwqxdLrQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies/list?date=2023-05-08",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies",
+						"list"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2023-05-08"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,24 +1,21 @@
-import mysql from 'mysql'
 import dotenv from 'dotenv'
+import pg from 'pg'
 dotenv.config()
 
-
-const pool = mysql.createPool({
-    connectionLimit: 1,
+const pool = new pg.Pool({
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DATABASE,
-    port: Number(process.env.MYSQL_PORT),
-    debug: false
+    port: Number(process.env.MYSQL_PORT)
 })
 
-const mySQL = {
+const postgres = {
     GetData(query: string): Promise<any[]> {
         return new Promise((resolve, reject) => {
             return pool.query(query, [], (err, data) => {
                 if (err) return reject(err);
-                resolve(JSON.parse(JSON.stringify(data)));
+                resolve(data.rows);
             })
         })
     }
@@ -27,10 +24,19 @@ const mySQL = {
         return new Promise((resolve, reject) => {
             return pool.query(query, data, (err, data) => {
                 if (err) return reject(err);
-                resolve(data.affectedRows);
+                resolve(data.rowCount);
+            })
+        })
+    },
+
+    FetchData(query: string, data: any[]): Promise<any[]> {
+        return new Promise((resolve, reject) => {
+            return pool.query(query, data, (err, data) => {
+                if (err) return reject(err);
+                resolve(data.rows);
             })
         })
     }
 }
 
-export default mySQL
+export default postgres
